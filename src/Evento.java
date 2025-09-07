@@ -74,6 +74,7 @@ In caso contrario sollevare eccezione. */
             disponibili deve sollevare eccezione. */
 
 public void prenota(){
+    boolean prenotato = false;
 if(date.isBefore(LocalDate.now())){
     System.out.println("Non puoi prenotare un posto per un evento già passato.");
 } else if (postiPrenotati >= totalePosti){
@@ -81,10 +82,9 @@ if(date.isBefore(LocalDate.now())){
 } else {
     postiPrenotati++;
     totalePosti--;
-}
 System.out.println("Prenotazione per l'evento effettuata.");
 }
-
+}
 /* - disdici: riduce di uno i posti prenotati. Se l’evento è già passato o non ci sono prenotazioni 
 solleva eccezione.
  */
