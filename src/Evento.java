@@ -84,7 +84,7 @@ if(date.isBefore(LocalDate.now())){
 } else {
     totalReservation++;
     totalPlace--;
-;
+
 }
 }
 /* - disdici: riduce di uno i posti prenotati. Se l’evento è già passato o non ci sono prenotazioni 

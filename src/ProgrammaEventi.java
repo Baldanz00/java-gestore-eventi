@@ -1,6 +1,7 @@
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class ProgrammaEventi {
@@ -38,5 +39,33 @@ public class ProgrammaEventi {
 
     /*METODO PER RESTITUIRE QUANTI EVENTI CI SONO IN PROGRAMMA */
 
-    
+    public int getNumeroEventi() {
+        return eventi.size();
+    }
+
+     // Metodo per svuotare la lista di eventi
+    public void svuotaEventi() {
+        eventi.clear();
+    }
+
+    // Metodo per ottenere una stringa con gli eventi ordinati per data
+    public String getEventiOrdinati() {
+        // Ordiniamo gli eventi usando Comparator.comparing
+        eventi.sort(Comparator.comparing(Evento::getDate));
+
+        String risultato = "Programma: " + titolo + "\n";
+        for (Evento evento : eventi) {
+            risultato += evento.toString() + "\n"; 
+        }
+        return risultato;
+    }
+
+    @Override
+    public String toString() {
+        return "ProgrammaEventi{" +
+                "titolo='" + titolo + '\'' +
+                ", numero di eventi=" + eventi.size() +
+                '}';
+    }
 }
+
